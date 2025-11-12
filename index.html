@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K2 Shilajit - Premium Shilajit Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="promo-banner">
+        <div class="promo-content">
+            <div class="promo-text">
+                <span class="promo-badge">🔥 Limited Time Offer</span>
+                <span class="promo-offer">50% OFF</span>
+                <span class="promo-message">on all Premium Shilajit Products - Use code: K2SHILAJIT50</span>
+            </div>
+            <div class="promo-text">
+                <span class="promo-badge">🔥 Limited Time Offer</span>
+                <span class="promo-offer">50% OFF</span>
+                <span class="promo-message">on all Premium Shilajit Products - Use code: K2SHILAJIT50</span>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="container">
+            <h1 class="logo">K2<span class="logo-accent">Shilajit</span></h1>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#products">Products</a>
+                <a href="#about">About</a>
+            </nav>
+            <div class="header-actions">
+                <div class="cart-icon" onclick="toggleCart()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4m7 14h4a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-4M7 3v18M17 3v18M7 7h10M7 11h10M7 15h10"/>
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="#home" onclick="toggleMobileMenu()">Home</a>
+            <a href="#products" onclick="toggleMobileMenu()">Products</a>
+            <a href="#about" onclick="toggleMobileMenu()">About</a>
+        </nav>
+    </header>
+
+    <main id="mainContent">
+        <section id="home" class="hero">
+            <div class="hero-slider">
+                <div class="slide active" style="background-image: linear-gradient(rgba(45, 55, 72, 0.7), rgba(26, 32, 44, 0.7)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80');">
+                    <div class="slide-content">
+                        <span class="hero-badge">Premium Quality</span>
+                        <h2 class="hero-title">Premium Himalayan<br><span class="gradient-text">Shilajit</span></h2>
+                        <p class="hero-description">Pure, authentic shilajit sourced from the pristine mountains of the Himalayas. Experience the power of nature's most potent mineral resin.</p>
+                        <a href="#products" class="hero-cta">
+                            <span>Shop Now</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: linear-gradient(rgba(45, 55, 72, 0.7), rgba(26, 32, 44, 0.7)), url('https://images.unsplash.com/photo-1464822759844-d150ad6d0cfa?w=1920&q=80');">
+                    <div class="slide-content">
+                        <span class="hero-badge">100% Natural</span>
+                        <h2 class="hero-title">Nature's Ancient<br><span class="gradient-text">Treasure</span></h2>
+                        <p class="hero-description">Harvested from the highest peaks, our shilajit contains over 85 minerals and trace elements essential for optimal health and vitality.</p>
+                        <a href="#products" class="hero-cta">
+                            <span>Explore Products</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: linear-gradient(rgba(45, 55, 72, 0.7), rgba(26, 32, 44, 0.7)), url('https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920&q=80');">
+                    <div class="slide-content">
+                        <span class="hero-badge">Lab Tested</span>
+                        <h2 class="hero-title">Certified Pure<br><span class="gradient-text">Excellence</span></h2>
+                        <p class="hero-description">Every batch is rigorously tested for purity and potency. Trust in quality that meets the highest international standards.</p>
+                        <a href="#products" class="hero-cta">
+                            <span>Shop Now</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="slider-btn prev" onclick="changeSlide(-1)">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <div class="slider-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+                <button class="slider-btn next" onclick="changeSlide(1)">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+            </div>
+        </section>
+
+        <section id="products" class="products">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Our Collection</span>
+                    <h2 class="section-title">Premium Products</h2>
+                    <p class="section-description">Discover our range of authentic Himalayan shilajit products</p>
+                </div>
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Testimonials</span>
+                    <h2 class="section-title">What Our Customers Say</h2>
+                </div>
+                <div class="testimonials-slider">
+                    <div class="testimonial-slide active">
+                        <div class="testimonial-content">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-text">"Amazing quality! I've been using K2 Shilajit for 3 months and feel a significant boost in my energy levels. Highly recommended!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar" style="background: linear-gradient(135deg, #8B7355 0%, #6B5B47 100%);"></div>
+                                <div>
+                                    <h4>Sarah Johnson</h4>
+                                    <p>Verified Customer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-text">"The purest shilajit I've ever tried. You can really feel the difference in quality. Worth every penny!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar" style="background: linear-gradient(135deg, #7A6B5D 0%, #5D4E42 100%);"></div>
+                                <div>
+                                    <h4>Michael Chen</h4>
+                                    <p>Verified Customer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-text">"Fast shipping and excellent customer service. The product is authentic and exactly as described. Will order again!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar" style="background: linear-gradient(135deg, #9B8B7A 0%, #7A6B5D 100%);"></div>
+                                <div>
+                                    <h4>Emily Rodriguez</h4>
+                                    <p>Verified Customer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <span class="testimonial-dot active" onclick="currentTestimonial(1)"></span>
+                    <span class="testimonial-dot" onclick="currentTestimonial(2)"></span>
+                    <span class="testimonial-dot" onclick="currentTestimonial(3)"></span>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <span class="section-label">About Us</span>
+                        <h2 class="section-title">K2 Shilajit</h2>
+                        <p>We source the finest quality shilajit directly from the Himalayan mountains. Our products are 100% pure, tested, and certified for quality and authenticity.</p>
+                        <div class="about-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">✓</div>
+                                <div>
+                                    <h4>100% Pure</h4>
+                                    <p>Authentic Himalayan source</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">✓</div>
+                                <div>
+                                    <h4>Lab Tested</h4>
+                                    <p>Certified quality assurance</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">✓</div>
+                                <div>
+                                    <h4>Premium Grade</h4>
+                                    <p>Highest quality standards</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" onclick="toggleCart()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4m7 14h4a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-4M7 3v18M17 3v18"/>
+                </svg>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+                        <div class="cart-total">
+                <span>Total</span>
+                <strong>Rs. <span id="cartTotal">0</span></strong>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">
+                <span>Proceed to Checkout</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="checkout-content">
+            <span class="close-checkout" onclick="closeCheckout()">&times;</span>
+            <h2>Checkout</h2>
+            <form id="checkoutForm" onsubmit="processOrder(event)">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="zip">ZIP Code</label>
+                    <input type="text" id="zip" required>
+                </div>
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div id="orderItems"></div>
+                    <div class="order-total">
+                        <strong>Total: Rs. <span id="orderTotal">0</span></strong>
+                    </div>
+                </div>
+                <button type="submit" class="submit-order-btn">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/923279571037" target="_blank" class="whatsapp-float" aria-label="Contact us on WhatsApp">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        <span class="whatsapp-tooltip">Chat with us</span>
+    </a>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">K2 Shilajit</h3>
+                    <p class="footer-description">Premium Himalayan shilajit sourced directly from the mountains. 100% pure, lab tested, and certified for quality.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.011 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Shop</h4>
+                    <ul class="footer-links">
+                        <li><a href="#products">All Products</a></li>
+                        <li><a href="?product=1">Premium Resin</a></li>
+                        <li><a href="?product=2">Shilajit Powder</a></li>
+                        <li><a href="?product=3">Capsules</a></li>
+                        <li><a href="?product=5">Combo Packs</a></li>
+                        <li><a href="?product=6">Gift Sets</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Information</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#" onclick="showPage('contact')">Contact Us</a></li>
+                        <li><a href="#" onclick="showPage('shipping')">Shipping & Returns</a></li>
+                        <li><a href="#" onclick="showPage('faq')">FAQ</a></li>
+                        <li><a href="#" onclick="showPage('blog')">Blog</a></li>
+                        <li><a href="#" onclick="showPage('testimonials')">Testimonials</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="showPage('privacy')">Privacy Policy</a></li>
+                        <li><a href="#" onclick="showPage('terms')">Terms & Conditions</a></li>
+                        <li><a href="#" onclick="showPage('refund')">Refund Policy</a></li>
+                        <li><a href="#" onclick="showPage('disclaimer')">Disclaimer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <p class="newsletter-text">Subscribe to get special offers and updates</p>
+                    <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <div class="contact-info">
+                        <p><strong>Email:</strong> info@k2shilajit.com</p>
+                        <p><strong>Phone:</strong> +92 327 9571037</p>
+                        <p><strong>WhatsApp:</strong> 0327 9571037</p>
+                        <p><strong>Hours:</strong> Mon-Sat 10AM-8PM PKT</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 K2 Shilajit. All rights reserved.</p>
+                    <div class="payment-methods">
+                        <span>We Accept:</span>
+                        <div class="payment-icons">
+                            <span class="payment-icon">💳</span>
+                            <span class="payment-icon">JazzCash</span>
+                            <span class="payment-icon">EasyPaisa</span>
+                            <span class="payment-icon">Bank Transfer</span>
+                            <span class="payment-icon">Cash on Delivery</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
