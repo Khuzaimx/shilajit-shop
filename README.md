@@ -65,3 +65,4 @@ Works on all modern browsers (Chrome, Firefox, Safari, Edge).
   - Add email notifications
   - Implement inventory management
 
+

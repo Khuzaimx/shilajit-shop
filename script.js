@@ -1,3 +1,55 @@
+// Image pool from static folder
+const imagePool = {
+    hero: [
+        'static/sl1.jpeg',
+        'static/sl2.jpeg',
+        'static/Gemini_Generated_Image_36npdz36npdz36np.png',
+        'static/Gemini_Generated_Image_4t4rjy4t4rjy4t4r.png',
+        'static/Gemini_Generated_Image_4xcb6z4xcb6z4xcb.png'
+    ],
+    products: [
+        'static/product.png',
+        'static/p2.png',
+        'static/p3.png',
+        'static/p4.png',
+        'static/p5.png',
+        'static/Gemini_Generated_Image_7a0jod7a0jod7a0j.png',
+        'static/Gemini_Generated_Image_besshwbesshwbess.png',
+        'static/Gemini_Generated_Image_cfcsjucfcsjucfcs.png',
+        'static/Gemini_Generated_Image_36npdz36npdz36np.png',
+        'static/Gemini_Generated_Image_4t4rjy4t4rjy4t4r.png',
+        'static/Gemini_Generated_Image_4xcb6z4xcb6z4xcb.png'
+    ]
+};
+
+// Function to get random images from pool
+function getRandomImages(pool, count = 3) {
+    const shuffled = [...pool].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+}
+
+// Function to get random single image
+function getRandomImage(pool) {
+    return pool[Math.floor(Math.random() * pool.length)];
+}
+
+// Generate fake reviews
+function generateReviews(productName) {
+    const reviewTemplates = [
+        { name: "Ahmed Ali", location: "Lahore", rating: 5, text: `Amazing quality! I've been using ${productName} for 2 months and feel a significant boost in my energy levels. Highly recommended!`, date: "2 weeks ago" },
+        { name: "Sarah Khan", location: "Karachi", rating: 5, text: `The purest shilajit I've ever tried. You can really feel the difference in quality. Worth every penny!`, date: "1 month ago" },
+        { name: "Mohammad Hassan", location: "Islamabad", rating: 5, text: `Fast shipping and excellent customer service. The product is authentic and exactly as described. Will order again!`, date: "3 weeks ago" },
+        { name: "Ayesha Malik", location: "Lahore", rating: 5, text: `Best quality shilajit available in Pakistan. Noticeable improvement in energy and overall well-being.`, date: "1 week ago" },
+        { name: "Usman Ahmed", location: "Rawalpindi", rating: 5, text: `Premium product with great results. My family loves it and we've already placed a second order.`, date: "2 weeks ago" },
+        { name: "Fatima Sheikh", location: "Karachi", rating: 4, text: `Good quality product. Delivery was quick and packaging was excellent. Very satisfied with the purchase.`, date: "1 month ago" },
+        { name: "Bilal Ahmad", location: "Faisalabad", rating: 5, text: `Excellent product! Authentic Himalayan shilajit as promised. Highly recommend to everyone.`, date: "3 weeks ago" },
+        { name: "Zainab Ali", location: "Lahore", rating: 5, text: `Outstanding quality and purity. Can feel the natural benefits within weeks of use. Great value for money!`, date: "2 weeks ago" }
+    ];
+    // Return 5-8 random reviews
+    const count = 5 + Math.floor(Math.random() * 4);
+    return reviewTemplates.sort(() => 0.5 - Math.random()).slice(0, count);
+}
+
 // Product data
 const products = [
     {
@@ -6,12 +58,8 @@ const products = [
         description: "Pure Himalayan shilajit resin, 100% authentic and tested for quality. Sourced from Pakistan's border region.",
         fullDescription: "Our Premium Shilajit Resin is harvested from the pristine Himalayan mountains near Pakistan's border at elevations above 10,000 feet. This raw, unprocessed resin contains over 85 minerals and trace elements in their natural form. Each batch is carefully tested for purity and authenticity in Pakistan.",
         price: 13999,
-        image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&q=80",
-        images: [
-            "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&q=80",
-            "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80",
-            "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80"
-        ],
+        image: getRandomImage(imagePool.products),
+        images: getRandomImages(imagePool.products, 4),
         benefits: [
             "85+ minerals and trace elements",
             "100% pure and unprocessed",
@@ -20,7 +68,11 @@ const products = [
             "Natural energy boost"
         ],
         size: "50 grams",
-        origin: "Himalayan Mountains, Pakistan"
+        origin: "Himalayan Mountains, Pakistan",
+        rating: 4.8,
+        reviewsCount: 247,
+        salesCount: 1843,
+        discount: 20
     },
     {
         id: 2,
@@ -28,12 +80,8 @@ const products = [
         description: "Finely ground shilajit powder, easy to mix and consume. Perfect for daily supplementation.",
         fullDescription: "Our Shilajit Powder is made from premium resin that has been carefully ground into a fine powder for easy consumption. Perfect for mixing into tea, milk, or water. Maintains all the natural benefits of raw shilajit in a convenient form.",
         price: 10999,
-        image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80",
-        images: [
-            "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80",
-            "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&q=80",
-            "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80"
-        ],
+        image: getRandomImage(imagePool.products),
+        images: getRandomImages(imagePool.products, 4),
         benefits: [
             "Easy to mix and consume",
             "Same purity as resin form",
@@ -42,7 +90,11 @@ const products = [
             "No additives or fillers"
         ],
         size: "100 grams",
-        origin: "Himalayan Mountains, Pakistan"
+        origin: "Himalayan Mountains, Pakistan",
+        rating: 4.7,
+        reviewsCount: 189,
+        salesCount: 1456,
+        discount: 15
     },
     {
         id: 3,
@@ -50,12 +102,8 @@ const products = [
         description: "Convenient shilajit capsules for daily supplementation. No taste, easy to swallow.",
         fullDescription: "Our Shilajit Capsules offer the perfect solution for those who want the benefits of shilajit without the taste. Each capsule contains pure shilajit powder in a vegetarian capsule. Perfect for on-the-go supplementation.",
         price: 12499,
-        image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80",
-        images: [
-            "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80",
-            "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&q=80",
-            "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80"
-        ],
+        image: getRandomImage(imagePool.products),
+        images: getRandomImages(imagePool.products, 4),
         benefits: [
             "No taste, easy to swallow",
             "Pre-measured dosage",
@@ -64,7 +112,11 @@ const products = [
             "Consistent potency"
         ],
         size: "60 capsules (500mg each)",
-        origin: "Himalayan Mountains, Pakistan"
+        origin: "Himalayan Mountains, Pakistan",
+        rating: 4.9,
+        reviewsCount: 312,
+        salesCount: 2234,
+        discount: 25
     },
     {
         id: 4,
@@ -72,12 +124,8 @@ const products = [
         description: "Concentrated shilajit extract with enhanced bioavailability. Maximum potency in smaller doses.",
         fullDescription: "Our Shilajit Extract is a highly concentrated form that has been carefully processed to enhance bioavailability while maintaining all natural compounds. This premium extract delivers maximum benefits in smaller doses.",
         price: 16999,
-        image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&q=80",
-        images: [
-            "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&q=80",
-            "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80",
-            "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80"
-        ],
+        image: getRandomImage(imagePool.products),
+        images: getRandomImages(imagePool.products, 4),
         benefits: [
             "Enhanced bioavailability",
             "Concentrated formula",
@@ -86,7 +134,11 @@ const products = [
             "Premium quality"
         ],
         size: "30ml",
-        origin: "Himalayan Mountains, Pakistan"
+        origin: "Himalayan Mountains, Pakistan",
+        rating: 4.6,
+        reviewsCount: 156,
+        salesCount: 987,
+        discount: 18
     },
     {
         id: 5,
@@ -94,12 +146,8 @@ const products = [
         description: "Complete shilajit collection - resin, powder, and capsules. Best value package for families.",
         fullDescription: "Our Combo Pack includes all three forms of our premium shilajit: resin, powder, and capsules. Perfect for trying different forms or for families. This value pack offers the best of all worlds.",
         price: 35999,
-        image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80",
-        images: [
-            "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80",
-            "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&q=80",
-            "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80"
-        ],
+        image: getRandomImage(imagePool.products),
+        images: getRandomImages(imagePool.products, 4),
         benefits: [
             "All three forms included",
             "Best value package",
@@ -108,7 +156,11 @@ const products = [
             "Save 15% vs buying separately"
         ],
         size: "Resin 25g + Powder 50g + 30 Capsules",
-        origin: "Himalayan Mountains, Pakistan"
+        origin: "Himalayan Mountains, Pakistan",
+        rating: 4.9,
+        reviewsCount: 278,
+        salesCount: 1654,
+        discount: 15
     },
     {
         id: 6,
@@ -116,12 +168,8 @@ const products = [
         description: "Luxury gift set perfect for gifting or personal use. Beautifully packaged with premium products.",
         fullDescription: "Our Premium Gift Set is beautifully packaged and includes our finest shilajit products. Perfect for gifting to loved ones or treating yourself. Includes premium resin, extract, and a beautiful wooden spoon.",
         price: 24999,
-        image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80",
-        images: [
-            "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80",
-            "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&q=80",
-            "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80"
-        ],
+        image: getRandomImage(imagePool.products),
+        images: getRandomImages(imagePool.products, 4),
         benefits: [
             "Beautiful gift packaging",
             "Premium quality products",
@@ -130,7 +178,11 @@ const products = [
             "Luxury presentation"
         ],
         size: "Resin 30g + Extract 20ml + Accessories",
-        origin: "Himalayan Mountains, Pakistan"
+        origin: "Himalayan Mountains, Pakistan",
+        rating: 5.0,
+        reviewsCount: 124,
+        salesCount: 756,
+        discount: 22
     }
 ];
 
@@ -146,25 +198,166 @@ let testimonials = [];
 // Initialize the store
 document.addEventListener('DOMContentLoaded', () => {
     loadProductDetail();
+    
+    // Add smooth scroll behavior for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && href !== '#!') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    const headerOffset = 100;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+    
+    // Optimized image loading with lazy loading
+    const images = document.querySelectorAll('img');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                }
+                
+                img.addEventListener('load', function() {
+                    this.style.opacity = '1';
+                }, { once: true });
+                
+                img.style.transition = 'opacity 0.2s ease';
+                img.style.willChange = 'opacity';
+                
+                if (img.complete) {
+                    img.style.opacity = '1';
+                } else {
+                    img.style.opacity = '0';
+                }
+                
+                observer.unobserve(img);
+            }
+        });
+    }, {
+        rootMargin: '50px'
+    });
+    
+    images.forEach(img => {
+        if (img.complete) {
+            img.style.opacity = '1';
+        } else {
+            imageObserver.observe(img);
+        }
+    });
+    
+    // Optimized header scroll effect with debouncing
+    let ticking = false;
+    let lastScroll = 0;
+    const header = document.querySelector('header');
+    
+    function updateHeader() {
+        const currentScroll = window.pageYOffset;
+        if (currentScroll > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        lastScroll = currentScroll;
+        ticking = false;
+    }
+    
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(updateHeader);
+            ticking = true;
+        }
+    }, { passive: true });
+    
+    // Intersection Observer for scroll animations (optimized)
+    const observerOptions = {
+        threshold: 0.05,
+        rootMargin: '50px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target); // Stop observing once animated
+            }
+        });
+    }, observerOptions);
+    
+    // Observe sections for fade-in animations (only if not already visible)
+    document.querySelectorAll('section').forEach(section => {
+        const rect = section.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        
+        if (!isVisible) {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+            section.style.willChange = 'opacity, transform';
+            observer.observe(section);
+        }
+    });
 });
 
-// Initialize sliders
+// Initialize sliders (optimized)
 function initSliders() {
     slides = document.querySelectorAll('.slide');
     testimonials = document.querySelectorAll('.testimonial-slide');
     
-    // Auto-advance hero slider
+    // Auto-advance hero slider (only if page is visible)
     if (slides.length > 0) {
-        setInterval(() => {
-            changeSlide(1);
-        }, 5000);
+        let slideInterval;
+        const startSlideShow = () => {
+            slideInterval = setInterval(() => {
+                if (!document.hidden) {
+                    changeSlide(1);
+                }
+            }, 5000);
+        };
+        
+        startSlideShow();
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                clearInterval(slideInterval);
+            } else {
+                startSlideShow();
+            }
+        });
     }
     
-    // Auto-advance testimonials
+    // Auto-advance testimonials (only if page is visible)
     if (testimonials.length > 0) {
-        setInterval(() => {
-            changeTestimonial(1);
-        }, 6000);
+        let testimonialInterval;
+        const startTestimonialShow = () => {
+            testimonialInterval = setInterval(() => {
+                if (!document.hidden) {
+                    changeTestimonial(1);
+                }
+            }, 6000);
+        };
+        
+        startTestimonialShow();
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                clearInterval(testimonialInterval);
+            } else {
+                startTestimonialShow();
+            }
+        });
     }
 }
 
@@ -248,6 +441,24 @@ function currentTestimonial(index) {
     }
 }
 
+// Order product on WhatsApp
+function orderOnWhatsApp(productId, event) {
+    event.stopPropagation(); // Prevent card click event
+    
+    const product = products.find(p => p.id === productId);
+    if (!product) return;
+    
+    // Build WhatsApp message for single product order
+    let message = `Hello! I would like to order:\n\n`;
+    message += `*${product.name}*\n`;
+    message += `Price: Rs. ${product.price.toLocaleString()}\n`;
+    message += `Description: ${product.description}\n\n`;
+    message += `Please provide more details about availability and delivery.`;
+    
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/923279571037?text=${encodedMessage}`, '_blank');
+}
+
 // Load products to the page
 function loadProducts() {
     const productsGrid = document.getElementById('productsGrid');
@@ -258,19 +469,33 @@ function loadProducts() {
     products.forEach(product => {
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
+        productCard.style.cursor = 'pointer';
+        productCard.onclick = () => {
+            window.location.href = `?product=${product.id}`;
+        };
         productCard.innerHTML = `
             <div class="product-image" style="background-image: url('${product.image}');">
-                <div class="product-overlay">
-                    <a href="?product=${product.id}" class="view-product-btn">View Details</a>
-                </div>
+                <div class="product-discount-badge">${product.discount}% OFF</div>
             </div>
             <div class="product-info">
                 <div class="product-name">${product.name}</div>
                 <div class="product-description">${product.description}</div>
-                <div class="product-price">Rs. ${product.price.toLocaleString()}</div>
+                <div class="product-price-wrapper">
+                    <div class="product-price">Rs. ${product.price.toLocaleString()}</div>
+                    <div class="product-sales-count">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                        </svg>
+                        <span>${product.salesCount.toLocaleString()} sold</span>
+                    </div>
+                </div>
                 <div class="product-actions">
-                    <a href="?product=${product.id}" class="view-details-btn">View Details</a>
-                    <button class="add-to-cart" onclick="addToCart(${product.id})">Add to Cart</button>
+                    <button class="order-whatsapp-btn" onclick="orderOnWhatsApp(${product.id}, event)">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        Order on WhatsApp
+                    </button>
                 </div>
             </div>
         `;
@@ -311,65 +536,27 @@ function getMainPageContent() {
     return `
         <section id="home" class="hero">
             <div class="hero-slider">
-                <div class="slide active" style="background-image: linear-gradient(rgba(45, 55, 72, 0.7), rgba(26, 32, 44, 0.7)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80');">
+                <div class="slide active" style="background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('static/h1.png');">
                     <div class="slide-content">
-                        <span class="hero-badge">Premium Quality</span>
-                        <h2 class="hero-title">Premium Himalayan<br><span class="gradient-text">Shilajit</span></h2>
-                        <p class="hero-description">Pure, authentic shilajit sourced from the pristine mountains of the Himalayas. Experience the power of nature's most potent mineral resin.</p>
-                        <a href="#products" class="hero-cta">
-                            <span>Shop Now</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
-                            </svg>
-                        </a>
+                        <h1 class="hero-title">Premium Himalayan Shilajit</h1>
+                        <p class="hero-description">Pure, authentic shilajit sourced from the pristine mountains of the Himalayas.</p>
+                        <a href="#products" class="hero-cta">Shop Now</a>
                     </div>
                 </div>
-                <div class="slide" style="background-image: linear-gradient(rgba(45, 55, 72, 0.7), rgba(26, 32, 44, 0.7)), url('https://images.unsplash.com/photo-1464822759844-d150ad6d0cfa?w=1920&q=80');">
+                <div class="slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('static/h2.png');">
                     <div class="slide-content">
-                        <span class="hero-badge">100% Natural</span>
-                        <h2 class="hero-title">Nature's Ancient<br><span class="gradient-text">Treasure</span></h2>
-                        <p class="hero-description">Harvested from the highest peaks, our shilajit contains over 85 minerals and trace elements essential for optimal health and vitality.</p>
-                        <a href="#products" class="hero-cta">
-                            <span>Explore Products</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
-                            </svg>
-                        </a>
+                        <h1 class="hero-title">100% Natural & Lab Tested</h1>
+                        <p class="hero-description">Harvested from the highest peaks, containing over 85 minerals and trace elements.</p>
+                        <a href="#products" class="hero-cta">Explore Products</a>
                     </div>
                 </div>
-                <div class="slide" style="background-image: linear-gradient(rgba(45, 55, 72, 0.7), rgba(26, 32, 44, 0.7)), url('https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920&q=80');">
+                <div class="slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('static/h3.png');">
                     <div class="slide-content">
-                        <span class="hero-badge">Lab Tested</span>
-                        <h2 class="hero-title">Certified Pure<br><span class="gradient-text">Excellence</span></h2>
-                        <p class="hero-description">Every batch is rigorously tested for purity and potency. Trust in quality that meets the highest international standards.</p>
-                        <a href="#products" class="hero-cta">
-                            <span>Shop Now</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
-                            </svg>
-                        </a>
+                        <h1 class="hero-title">Certified Pure Excellence</h1>
+                        <p class="hero-description">Every batch is rigorously tested for purity and potency.</p>
+                        <a href="#products" class="hero-cta">Shop Now</a>
                     </div>
                 </div>
-            </div>
-            <div class="slider-controls">
-                <button class="slider-btn prev" onclick="changeSlide(-1)">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M15 18l-6-6 6-6"/>
-                    </svg>
-                </button>
-                <div class="slider-dots">
-                    <span class="dot active" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                </div>
-                <button class="slider-btn next" onclick="changeSlide(1)">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M9 18l6-6-6-6"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="scroll-indicator">
-                <div class="scroll-arrow"></div>
             </div>
         </section>
 
@@ -547,8 +734,27 @@ function getMainPageContent() {
     `;
 }
 
+// Generate stars HTML based on rating
+function generateStars(rating) {
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 >= 0.5;
+    let stars = '';
+    
+    for (let i = 0; i < fullStars; i++) {
+        stars += '★';
+    }
+    if (hasHalfStar && fullStars < 5) {
+        stars += '☆';
+    }
+    for (let i = fullStars + (hasHalfStar ? 1 : 0); i < 5; i++) {
+        stars += '☆';
+    }
+    return stars;
+}
+
 // Get product detail HTML
 function getProductDetailHTML(product) {
+    const reviews = generateReviews(product.name);
     return `
         <section class="product-detail">
             <div class="container">
@@ -576,9 +782,18 @@ function getProductDetailHTML(product) {
                     <div class="product-info-detail">
                         <span class="product-badge">Premium Quality</span>
                         <h1 class="product-title">${product.name}</h1>
-                        <div class="product-rating">
-                            <span class="stars">★★★★★</span>
-                            <span class="rating-text">(4.9/5 - 127 reviews)</span>
+                        <div class="product-rating-sales">
+                            <div class="product-rating">
+                                <span class="stars">${generateStars(product.rating)}</span>
+                                <span class="rating-value">${product.rating.toFixed(1)}</span>
+                                <span class="rating-text">(${product.reviewsCount} reviews)</span>
+                            </div>
+                            <div class="product-sales">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                                </svg>
+                                <span>${product.salesCount.toLocaleString()} sold</span>
+                            </div>
                         </div>
                         <div class="product-price-large">Rs. ${product.price.toLocaleString()}</div>
                         <p class="product-full-description">${product.fullDescription}</p>
@@ -644,6 +859,74 @@ function getProductDetailHTML(product) {
                         </div>
                     </div>
                 </div>
+                
+                <div class="product-reviews-section">
+                    <h2 class="reviews-title">Customer Reviews & Ratings</h2>
+                    <div class="reviews-summary">
+                        <div class="overall-rating">
+                            <div class="rating-big">${product.rating.toFixed(1)}</div>
+                            <div class="stars-big">${generateStars(product.rating)}</div>
+                            <div class="rating-details">Based on ${product.reviewsCount} reviews</div>
+                        </div>
+                        <div class="rating-breakdown">
+                            <div class="rating-bar">
+                                <span>5★</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: ${Math.floor((reviews.filter(r => r.rating === 5).length / reviews.length) * 100)}%"></div>
+                                </div>
+                                <span>${reviews.filter(r => r.rating === 5).length}</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>4★</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: ${Math.floor((reviews.filter(r => r.rating === 4).length / reviews.length) * 100)}%"></div>
+                                </div>
+                                <span>${reviews.filter(r => r.rating === 4).length}</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>3★</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: ${Math.floor((reviews.filter(r => r.rating === 3).length / reviews.length) * 100)}%"></div>
+                                </div>
+                                <span>${reviews.filter(r => r.rating === 3).length}</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>2★</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: ${Math.floor((reviews.filter(r => r.rating === 2).length / reviews.length) * 100)}%"></div>
+                                </div>
+                                <span>${reviews.filter(r => r.rating === 2).length}</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>1★</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: ${Math.floor((reviews.filter(r => r.rating === 1).length / reviews.length) * 100)}%"></div>
+                                </div>
+                                <span>${reviews.filter(r => r.rating === 1).length}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="reviews-list">
+                        ${reviews.map(review => `
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <div class="reviewer-avatar">${review.name.charAt(0)}</div>
+                                        <div>
+                                            <div class="reviewer-name">${review.name}</div>
+                                            <div class="reviewer-location">${review.location} • ${review.date}</div>
+                                        </div>
+                                    </div>
+                                    <div class="review-rating">
+                                        ${generateStars(review.rating)}
+                                    </div>
+                                </div>
+                                <div class="review-text">${review.text}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
             </div>
         </section>
         
@@ -668,19 +951,33 @@ function initProductDetail(product) {
         relatedProducts.forEach(prod => {
             const card = document.createElement('div');
             card.className = 'product-card';
+            card.style.cursor = 'pointer';
+            card.onclick = () => {
+                window.location.href = `?product=${prod.id}`;
+            };
             card.innerHTML = `
                 <div class="product-image" style="background-image: url('${prod.image}');">
-                    <div class="product-overlay">
-                        <a href="?product=${prod.id}" class="view-product-btn">View Details</a>
-                    </div>
+                    <div class="product-discount-badge">${prod.discount}% OFF</div>
                 </div>
                 <div class="product-info">
                     <div class="product-name">${prod.name}</div>
                     <div class="product-description">${prod.description}</div>
-                    <div class="product-price">Rs. ${prod.price.toLocaleString()}</div>
+                    <div class="product-price-wrapper">
+                        <div class="product-price">Rs. ${prod.price.toLocaleString()}</div>
+                        <div class="product-sales-count">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                            </svg>
+                            <span>${prod.salesCount.toLocaleString()} sold</span>
+                        </div>
+                    </div>
                     <div class="product-actions">
-                        <a href="?product=${prod.id}" class="view-details-btn">View Details</a>
-                        <button class="add-to-cart" onclick="addToCart(${prod.id})">Add to Cart</button>
+                        <button class="order-whatsapp-btn" onclick="orderOnWhatsApp(${prod.id}, event)">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            Order on WhatsApp
+                        </button>
                     </div>
                 </div>
             `;
@@ -708,7 +1005,7 @@ function changeQuantity(change) {
     document.getElementById('productQuantity').textContent = productQuantity;
 }
 
-// Add to cart from detail page
+// Add to cart from detail page with visual feedback
 function addToCartFromDetail(productId) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
@@ -716,19 +1013,47 @@ function addToCartFromDetail(productId) {
     // Get quantity
     const quantity = productQuantity || 1;
     
-    // Redirect to WhatsApp with product information
-    const message = encodeURIComponent(`Hello! I'm interested in purchasing:\n\n*${product.name}*\nQuantity: ${quantity}\nPrice: Rs. ${product.price.toLocaleString()} each\nTotal: Rs. ${(product.price * quantity).toLocaleString()}\n\n${product.fullDescription || product.description}\n\nPlease let me know about availability and shipping.`);
-    window.open(`https://wa.me/923279571037?text=${message}`, '_blank');
+    // Visual feedback
+    const button = event?.target?.closest('.add-to-cart-large');
+    if (button) {
+        button.style.transform = 'scale(0.98)';
+        setTimeout(() => {
+            button.style.transform = '';
+        }, 200);
+    }
+
+    // Show notification
+    showNotification(`${quantity}x ${product.name} added! Redirecting to WhatsApp...`, 'success', 2000);
+
+    // Small delay for better UX
+    setTimeout(() => {
+        const message = encodeURIComponent(`Hello! I'm interested in purchasing:\n\n*${product.name}*\nQuantity: ${quantity}\nPrice: Rs. ${product.price.toLocaleString()} each\nTotal: Rs. ${(product.price * quantity).toLocaleString()}\n\n${product.fullDescription || product.description}\n\nPlease let me know about availability and shipping.`);
+        window.open(`https://wa.me/923279571037?text=${message}`, '_blank');
+    }, 500);
 }
 
-// Add product to cart
+// Add product to cart with visual feedback
 function addToCart(productId) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
 
-    // Redirect to WhatsApp with product information
-    const message = encodeURIComponent(`Hello! I'm interested in purchasing:\n\n*${product.name}*\nPrice: Rs. ${product.price.toLocaleString()}\n\n${product.description}\n\nPlease let me know about availability and shipping.`);
-    window.open(`https://wa.me/923279571037?text=${message}`, '_blank');
+    // Visual feedback - button animation
+    const button = event?.target || document.querySelector(`button[onclick*="${productId}"]`);
+    if (button) {
+        button.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            button.style.transform = '';
+        }, 200);
+    }
+
+    // Show notification
+    showNotification(`${product.name} added! Redirecting to WhatsApp...`, 'success', 2000);
+
+    // Small delay for better UX
+    setTimeout(() => {
+        const message = encodeURIComponent(`Hello! I'm interested in purchasing:\n\n*${product.name}*\nPrice: Rs. ${product.price.toLocaleString()}\n\n${product.description}\n\nPlease let me know about availability and shipping.`);
+        window.open(`https://wa.me/923279571037?text=${message}`, '_blank');
+    }, 500);
 }
 
 // Remove product from cart
@@ -768,15 +1093,21 @@ function toggleMobileMenu() {
     mobileNav.classList.toggle('active');
 }
 
-// Update cart UI
+// Update cart UI with animations
 function updateCartUI() {
     const cartItems = document.getElementById('cartItems');
     const cartCount = document.getElementById('cartCount');
     const cartTotal = document.getElementById('cartTotal');
 
-    // Update cart count
+    // Update cart count with animation
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    cartCount.textContent = totalItems;
+    if (cartCount) {
+        cartCount.textContent = totalItems;
+        if (totalItems > 0) {
+            cartCount.classList.add('animate');
+            setTimeout(() => cartCount.classList.remove('animate'), 500);
+        }
+    }
 
     // Update cart items
     if (cart.length === 0) {
@@ -921,14 +1252,29 @@ function resetStore() {
     location.reload();
 }
 
-// Newsletter subscription
+// Newsletter subscription with validation
 function subscribeNewsletter(event) {
     event.preventDefault();
-    const email = event.target.querySelector('input[type="email"]').value;
+    const form = event.target;
+    const emailInput = form.querySelector('input[type="email"]');
+    const email = emailInput.value;
+    
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        showNotification('Please enter a valid email address.', 'error');
+        emailInput.focus();
+        emailInput.style.borderColor = '#ef4444';
+        setTimeout(() => {
+            emailInput.style.borderColor = '';
+        }, 3000);
+        return;
+    }
+    
     // In a real application, you would send this to a server
     console.log('Newsletter subscription:', email);
-    showNotification('Thank you for subscribing to our newsletter!');
-    event.target.reset();
+    showNotification('Thank you for subscribing to our newsletter! We\'ll be in touch soon.', 'success');
+    form.reset();
 }
 
 // Show page modal (for footer links)
@@ -1172,57 +1518,93 @@ function closePageModal() {
     }
 }
 
-// Show notification
-function showNotification(message) {
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.style.cssText = `
-        position: fixed;
-        top: 100px;
-        right: 20px;
-        background: #27ae60;
-        color: white;
-        padding: 1rem 1.5rem;
-        border-radius: 5px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        z-index: 3000;
-        animation: slideIn 0.3s;
-    `;
-    notification.textContent = message;
-    document.body.appendChild(notification);
+// Enhanced Toast Notification System
+function showNotification(message, type = 'success', duration = 4000) {
+    // Remove existing toasts
+    const existingToasts = document.querySelectorAll('.toast');
+    existingToasts.forEach(toast => {
+        toast.classList.add('fade-out');
+        setTimeout(() => toast.remove(), 300);
+    });
 
-    // Remove after 3 seconds
+    // Create notification element
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    
+    const icons = {
+        success: `<svg class="toast-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`,
+        error: `<svg class="toast-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`,
+        info: `<svg class="toast-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`
+    };
+    
+    const titles = {
+        success: 'Success!',
+        error: 'Error!',
+        info: 'Info'
+    };
+    
+    toast.innerHTML = `
+        ${icons[type] || icons.info}
+        <div class="toast-content">
+            <div class="toast-title">${titles[type] || 'Notification'}</div>
+            <div class="toast-message">${message}</div>
+        </div>
+        <button class="toast-close" onclick="this.closest('.toast').classList.add('fade-out'); setTimeout(() => this.closest('.toast').remove(), 300);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+        </button>
+    `;
+    
+    document.body.appendChild(toast);
+
+    // Adjust position for multiple toasts
+    const allToasts = document.querySelectorAll('.toast');
+    allToasts.forEach((t, index) => {
+        if (index > 0) {
+            t.style.top = `${100 + (index * 120)}px`;
+        }
+    });
+
+    // Remove after duration
     setTimeout(() => {
-        notification.style.animation = 'slideOut 0.3s';
+        toast.classList.add('fade-out');
         setTimeout(() => {
-            document.body.removeChild(notification);
+            if (toast.parentNode) {
+                toast.remove();
+                // Reposition remaining toasts
+                const remainingToasts = document.querySelectorAll('.toast');
+                remainingToasts.forEach((t, index) => {
+                    t.style.top = `${100 + (index * 120)}px`;
+                });
+            }
         }, 300);
-    }, 3000);
+    }, duration);
 }
 
-// Add CSS animations for notifications
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes slideIn {
-        from {
-            transform: translateX(400px);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
+// Loading overlay functions
+function showLoading() {
+    let overlay = document.querySelector('.loading-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'loading-overlay';
+        overlay.innerHTML = '<div class="spinner"></div>';
+        document.body.appendChild(overlay);
     }
-    @keyframes slideOut {
-        from {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        to {
-            transform: translateX(400px);
-            opacity: 0;
-        }
+    overlay.classList.add('active');
+}
+
+function hideLoading() {
+    const overlay = document.querySelector('.loading-overlay');
+    if (overlay) {
+        overlay.classList.remove('active');
+        setTimeout(() => {
+            if (overlay.parentNode) {
+                overlay.remove();
+            }
+        }, 300);
     }
-`;
-document.head.appendChild(style);
+}
+
+// Note: Toast notification styles are now in styles.css - no need for inline styles
 
