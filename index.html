@@ -97,88 +97,112 @@
 
         <section class="testimonials">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-label">Testimonials</span>
-                    <h2 class="section-title">What Our Customers Say</h2>
+                <div class="testimonials-header">
+                    <span class="testimonials-label">TESTIMONIALS</span>
+                    <h2 class="testimonials-title">What Our Customers Say</h2>
+                    <p class="testimonials-description">Discover how K2 Shilajit has transformed the lives of our customers. Read authentic reviews from people who have experienced the incredible benefits of our premium Himalayan shilajit.</p>
                 </div>
-                <div class="testimonials-slider">
-                    <div class="testimonial-slide active">
-                        <div class="testimonial-content">
-                            <div class="testimonial-stars">★★★★★</div>
-                            <p class="testimonial-text">"Amazing quality! I've been using K2 Shilajit for 3 months and feel a significant boost in my energy levels. Highly recommended!"</p>
-                            <div class="testimonial-author">
-                                <div class="author-avatar" style="background: linear-gradient(135deg, #8B7355 0%, #6B5B47 100%);"></div>
-                                <div>
-                                    <h4>Sarah Johnson</h4>
-                                    <p>Verified Customer</p>
-                                </div>
-                            </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-avatar">
+                            <img src="https://i.pravatar.cc/150?img=12" alt="Mike Torello">
                         </div>
+                        <p class="testimonial-quote">"I've been taking K2 Shilajit for 4 months now and the results are incredible. My energy levels have skyrocketed, and I feel more focused throughout the day. The quality is unmatched - you can tell it's the real deal from the mountains. Highly recommend to anyone looking for natural energy and vitality!"</p>
+                        <h4 class="testimonial-name">Mike Torello</h4>
+                        <p class="testimonial-title">Executive Engineer</p>
                     </div>
-                    <div class="testimonial-slide">
-                        <div class="testimonial-content">
-                            <div class="testimonial-stars">★★★★★</div>
-                            <p class="testimonial-text">"The purest shilajit I've ever tried. You can really feel the difference in quality. Worth every penny!"</p>
-                            <div class="testimonial-author">
-                                <div class="author-avatar" style="background: linear-gradient(135deg, #7A6B5D 0%, #5D4E42 100%);"></div>
-                                <div>
-                                    <h4>Michael Chen</h4>
-                                    <p>Verified Customer</p>
-                                </div>
-                            </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-avatar">
+                            <img src="https://i.pravatar.cc/150?img=33" alt="Rick Wright">
                         </div>
+                        <p class="testimonial-quote">"After trying multiple shilajit brands, K2 Shilajit stands out as the purest and most effective. I take it daily and have noticed significant improvements in my stamina and overall well-being. The customer service is excellent, and shipping was fast. This is now a permanent part of my wellness routine."</p>
+                        <h4 class="testimonial-name">Rick Wright</h4>
+                        <p class="testimonial-title">Executive Engineer</p>
                     </div>
-                    <div class="testimonial-slide">
-                        <div class="testimonial-content">
-                            <div class="testimonial-stars">★★★★★</div>
-                            <p class="testimonial-text">"Fast shipping and excellent customer service. The product is authentic and exactly as described. Will order again!"</p>
-                            <div class="testimonial-author">
-                                <div class="author-avatar" style="background: linear-gradient(135deg, #9B8B7A 0%, #7A6B5D 100%);"></div>
-                                <div>
-                                    <h4>Emily Rodriguez</h4>
-                                    <p>Verified Customer</p>
-                                </div>
-                            </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-avatar">
+                            <img src="https://i.pravatar.cc/150?img=47" alt="Devon Miles">
                         </div>
+                        <p class="testimonial-quote">"K2 Shilajit has been a game-changer for me. I was skeptical at first, but after 2 months of consistent use, I can feel the difference. My recovery time after workouts has improved, and I wake up feeling more refreshed. The authenticity and purity are evident. Worth every penny!"</p>
+                        <h4 class="testimonial-name">Devon Miles</h4>
+                        <p class="testimonial-title">Executive Engineer</p>
                     </div>
                 </div>
-                <div class="testimonial-controls">
-                    <span class="testimonial-dot active" onclick="currentTestimonial(1)"></span>
-                    <span class="testimonial-dot" onclick="currentTestimonial(2)"></span>
-                    <span class="testimonial-dot" onclick="currentTestimonial(3)"></span>
+                <div class="testimonial-nav">
+                    <button class="testimonial-nav-btn" onclick="changeTestimonial(-1)" aria-label="Previous testimonial">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
+                    <button class="testimonial-nav-btn" onclick="changeTestimonial(1)" aria-label="Next testimonial">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </section>
 
         <section id="about" class="about">
             <div class="container">
-                <div class="about-content">
-                    <div class="about-text">
-                        <span class="section-label">About Us</span>
-                        <h2 class="section-title">K2 Shilajit</h2>
-                        <p>We source the finest quality shilajit directly from the Himalayan mountains. Our products are 100% pure, tested, and certified for quality and authenticity.</p>
-                        <div class="about-features">
-                            <div class="feature-item">
-                                <div class="feature-icon">✓</div>
-                                <div>
-                                    <h4>100% Pure</h4>
-                                    <p>Authentic Himalayan source</p>
-                                </div>
+                <div class="about-header">
+                    <span class="about-label">ABOUT US</span>
+                    <h2 class="about-title">K2 Shilajit</h2>
+                    <p class="about-subtitle">Premium Himalayan shilajit sourced directly from the mountains. 100% pure, lab tested, and certified for quality and authenticity.</p>
+                </div>
+                <div class="about-grid">
+                    <div class="about-main">
+                        <div class="about-text-block">
+                            <h3>Our Story</h3>
+                            <p>We source the finest quality shilajit directly from the pristine Himalayan mountains. Every batch is carefully harvested at elevations above 10,000 feet and rigorously tested to ensure the highest standards of purity and potency.</p>
+                            <p>Our commitment is to deliver authentic, premium-grade shilajit that preserves all natural minerals and trace elements. We work directly with local harvesters to maintain quality control from source to shelf.</p>
+                        </div>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">10,000+</div>
+                                <div class="stat-label">Elevation (ft)</div>
                             </div>
-                            <div class="feature-item">
-                                <div class="feature-icon">✓</div>
-                                <div>
-                                    <h4>Lab Tested</h4>
-                                    <p>Certified quality assurance</p>
-                                </div>
+                            <div class="stat-item">
+                                <div class="stat-number">85+</div>
+                                <div class="stat-label">Minerals</div>
                             </div>
-                            <div class="feature-item">
-                                <div class="feature-icon">✓</div>
-                                <div>
-                                    <h4>Premium Grade</h4>
-                                    <p>Highest quality standards</p>
-                                </div>
+                            <div class="stat-item">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Pure & Natural</div>
                             </div>
+                            <div class="stat-item">
+                                <div class="stat-number">Lab</div>
+                                <div class="stat-label">Tested</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                            </div>
+                            <h4>100% Pure</h4>
+                            <p>Authentic Himalayan source with complete traceability</p>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                                </svg>
+                            </div>
+                            <h4>Lab Tested</h4>
+                            <p>Rigorous testing for purity, potency, and safety</p>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                </svg>
+                            </div>
+                            <h4>Premium Grade</h4>
+                            <p>Highest quality standards and certifications</p>
                         </div>
                     </div>
                 </div>
