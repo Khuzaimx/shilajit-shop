@@ -54,12 +54,12 @@ function generateReviews(productName) {
 const products = [
     {
         id: 1,
-        name: "Premium Shilajit Resin",
-        description: "Pure Himalayan shilajit resin, 100% authentic and tested for quality. Sourced from Pakistan's border region.",
-        fullDescription: "Our Premium Shilajit Resin is harvested from the pristine Himalayan mountains near Pakistan's border at elevations above 10,000 feet. This raw, unprocessed resin contains over 85 minerals and trace elements in their natural form. Each batch is carefully tested for purity and authenticity in Pakistan.",
-        price: 13999,
-        image: getRandomImage(imagePool.products),
-        images: getRandomImages(imagePool.products, 4),
+        name: "Premium Shilajit Resin - 15 Gram",
+        description: "Pure Himalayan shilajit resin, 100% authentic and tested for quality. Perfect starter pack for daily use.",
+        fullDescription: "Our Premium Shilajit Resin is harvested from the pristine Himalayan mountains near Pakistan's border at elevations above 10,000 feet. This raw, unprocessed resin contains over 85 minerals and trace elements in their natural form. Each batch is carefully tested for purity and authenticity in Pakistan. The 15 gram pack is perfect for those trying shilajit for the first time or for short-term use.",
+        price: 1650,
+        image: 'static/15gram_1.png',
+        images: ['static/15gram_1.png', 'static/15gram_2.png', 'static/15gram_3.png', 'static/15gram_4.png'],
         benefits: [
             "85+ minerals and trace elements",
             "100% pure and unprocessed",
@@ -67,122 +67,78 @@ const products = [
             "Direct from Himalayan source",
             "Natural energy boost"
         ],
-        size: "50 grams",
+        size: "15 grams",
         origin: "Himalayan Mountains, Pakistan",
         rating: 4.8,
         reviewsCount: 247,
         salesCount: 1843,
-        discount: 20
+        discount: 15
     },
     {
         id: 2,
-        name: "Shilajit Powder",
-        description: "Finely ground shilajit powder, easy to mix and consume. Perfect for daily supplementation.",
-        fullDescription: "Our Shilajit Powder is made from premium resin that has been carefully ground into a fine powder for easy consumption. Perfect for mixing into tea, milk, or water. Maintains all the natural benefits of raw shilajit in a convenient form.",
-        price: 10999,
-        image: getRandomImage(imagePool.products),
-        images: getRandomImages(imagePool.products, 4),
+        name: "Premium Shilajit Resin - 20 Gram",
+        description: "Pure Himalayan shilajit resin, 100% authentic and tested for quality. Ideal for regular users.",
+        fullDescription: "Our Premium Shilajit Resin is harvested from the pristine Himalayan mountains near Pakistan's border at elevations above 10,000 feet. This raw, unprocessed resin contains over 85 minerals and trace elements in their natural form. Each batch is carefully tested for purity and authenticity in Pakistan. The 20 gram pack offers great value for regular users who want a month's supply.",
+        price: 2100,
+        image: 'static/20gram_1.png',
+        images: ['static/20gram_1.png', 'static/20gram_2.png', 'static/20gram_3.png', 'static/20gram_4.png'],
         benefits: [
-            "Easy to mix and consume",
-            "Same purity as resin form",
-            "Convenient daily supplement",
-            "Fast absorption",
-            "No additives or fillers"
+            "85+ minerals and trace elements",
+            "100% pure and unprocessed",
+            "Lab tested in Pakistan",
+            "Direct from Himalayan source",
+            "Natural energy boost"
         ],
-        size: "100 grams",
+        size: "20 grams",
         origin: "Himalayan Mountains, Pakistan",
         rating: 4.7,
         reviewsCount: 189,
         salesCount: 1456,
-        discount: 15
+        discount: 18
     },
     {
         id: 3,
-        name: "Shilajit Capsules",
-        description: "Convenient shilajit capsules for daily supplementation. No taste, easy to swallow.",
-        fullDescription: "Our Shilajit Capsules offer the perfect solution for those who want the benefits of shilajit without the taste. Each capsule contains pure shilajit powder in a vegetarian capsule. Perfect for on-the-go supplementation.",
-        price: 12499,
-        image: getRandomImage(imagePool.products),
-        images: getRandomImages(imagePool.products, 4),
+        name: "Premium Shilajit Resin - 30 Gram",
+        description: "Pure Himalayan shilajit resin, 100% authentic and tested for quality. Best value for long-term users.",
+        fullDescription: "Our Premium Shilajit Resin is harvested from the pristine Himalayan mountains near Pakistan's border at elevations above 10,000 feet. This raw, unprocessed resin contains over 85 minerals and trace elements in their natural form. Each batch is carefully tested for purity and authenticity in Pakistan. The 30 gram pack provides excellent value for long-term users and families.",
+        price: 2699,
+        image: 'static/30gram_1.png',
+        images: ['static/30gram_1.png', 'static/30gram_2.png', 'static/30gram_3.png'],
         benefits: [
-            "No taste, easy to swallow",
-            "Pre-measured dosage",
-            "Vegetarian capsules",
-            "Travel-friendly",
-            "Consistent potency"
+            "85+ minerals and trace elements",
+            "100% pure and unprocessed",
+            "Lab tested in Pakistan",
+            "Direct from Himalayan source",
+            "Natural energy boost"
         ],
-        size: "60 capsules (500mg each)",
+        size: "30 grams",
         origin: "Himalayan Mountains, Pakistan",
         rating: 4.9,
         reviewsCount: 312,
         salesCount: 2234,
-        discount: 25
+        discount: 20
     },
     {
         id: 4,
-        name: "Shilajit Extract",
-        description: "Concentrated shilajit extract with enhanced bioavailability. Maximum potency in smaller doses.",
-        fullDescription: "Our Shilajit Extract is a highly concentrated form that has been carefully processed to enhance bioavailability while maintaining all natural compounds. This premium extract delivers maximum benefits in smaller doses.",
-        price: 16999,
-        image: getRandomImage(imagePool.products),
-        images: getRandomImages(imagePool.products, 4),
+        name: "Premium Shilajit Resin - 60 Gram",
+        description: "Pure Himalayan shilajit resin, 100% authentic and tested for quality. Maximum value family pack.",
+        fullDescription: "Our Premium Shilajit Resin is harvested from the pristine Himalayan mountains near Pakistan's border at elevations above 10,000 feet. This raw, unprocessed resin contains over 85 minerals and trace elements in their natural form. Each batch is carefully tested for purity and authenticity in Pakistan. The 60 gram pack offers the best value and is perfect for families or long-term users who want to stock up.",
+        price: 4499,
+        image: 'static/60gram_1.png',
+        images: ['static/60gram_1.png', 'static/60gram_2.png', 'static/60gram_3.png', 'static/60gram_4.png'],
         benefits: [
-            "Enhanced bioavailability",
-            "Concentrated formula",
-            "Maximum potency",
-            "Smaller serving size",
-            "Premium quality"
+            "85+ minerals and trace elements",
+            "100% pure and unprocessed",
+            "Lab tested in Pakistan",
+            "Direct from Himalayan source",
+            "Natural energy boost"
         ],
-        size: "30ml",
-        origin: "Himalayan Mountains, Pakistan",
-        rating: 4.6,
-        reviewsCount: 156,
-        salesCount: 987,
-        discount: 18
-    },
-    {
-        id: 5,
-        name: "Shilajit Combo Pack",
-        description: "Complete shilajit collection - resin, powder, and capsules. Best value package for families.",
-        fullDescription: "Our Combo Pack includes all three forms of our premium shilajit: resin, powder, and capsules. Perfect for trying different forms or for families. This value pack offers the best of all worlds.",
-        price: 35999,
-        image: getRandomImage(imagePool.products),
-        images: getRandomImages(imagePool.products, 4),
-        benefits: [
-            "All three forms included",
-            "Best value package",
-            "Try different formats",
-            "Perfect for families",
-            "Save 15% vs buying separately"
-        ],
-        size: "Resin 25g + Powder 50g + 30 Capsules",
-        origin: "Himalayan Mountains, Pakistan",
-        rating: 4.9,
-        reviewsCount: 278,
-        salesCount: 1654,
-        discount: 15
-    },
-    {
-        id: 6,
-        name: "Premium Shilajit Gift Set",
-        description: "Luxury gift set perfect for gifting or personal use. Beautifully packaged with premium products.",
-        fullDescription: "Our Premium Gift Set is beautifully packaged and includes our finest shilajit products. Perfect for gifting to loved ones or treating yourself. Includes premium resin, extract, and a beautiful wooden spoon.",
-        price: 24999,
-        image: getRandomImage(imagePool.products),
-        images: getRandomImages(imagePool.products, 4),
-        benefits: [
-            "Beautiful gift packaging",
-            "Premium quality products",
-            "Includes wooden spoon",
-            "Perfect for gifting",
-            "Luxury presentation"
-        ],
-        size: "Resin 30g + Extract 20ml + Accessories",
+        size: "60 grams",
         origin: "Himalayan Mountains, Pakistan",
         rating: 5.0,
-        reviewsCount: 124,
-        salesCount: 756,
-        discount: 22
+        reviewsCount: 278,
+        salesCount: 1654,
+        discount: 25
     }
 ];
 
